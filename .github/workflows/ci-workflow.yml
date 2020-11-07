@@ -21,7 +21,7 @@ jobs:
         # For docker default mode
         mode: ['default', 'pcn-k8s', 'pcn-iptables']
     env:
-      DOCKER_IMAGE_TAG: ${{ github.event.head_commit.message }}
+      DOCKER_IMAGE_TAG: latest
       DOCKER_IMAGE_NAME: polycube
       DOCKER_CONTAINER: polycubed
       REPO_GIT_BRANCH: main
@@ -70,7 +70,7 @@ jobs:
             build-args: |
               DEFAULT_MODE=${{ matrix.mode }}
             push: true
-            tags: ghcr.io/polycubebot/${{ env.DOCKER_IMAGE_NAME }}-pcn-iptables:${{ env.DOCKER_IMAGE_TAG }}
+            tags: ghcr.io/polycubebot/${{ env.DOCKER_IMAGE_NAME }}-${{ matrix.mode }}:${{ env.DOCKER_IMAGE_TAG }}
             cache-from: type=local,src=/tmp/.buildx-cache
             cache-to: type=local,dest=/tmp/.buildx-cache
       -
