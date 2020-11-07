@@ -35,10 +35,10 @@ jobs:
           DOCKER_CONTAINER: polycubed
           REPO_GIT_BRANCH: ${GITHUB_REF#refs/heads/}
         run: echo ENV 
-          | REPO_GIT_BRANCH=$REPO_GIT_BRANCH,
-          | DOCKER_IMAGE_TAG=$DOCKER_IMAGE_TAG,
-          | DOCKER_IMAGE_NAME=$DOCKER_IMAGE_NAME,
-          | DOCKER_CONTAINER=$DOCKER_CONTAINER
+          | REPO_GIT_BRANCH=${{ env.REPO_GIT_BRANCH }}, 
+          | DOCKER_IMAGE_TAG=${{ env.DOCKER_IMAGE_TAG }}, 
+          | DOCKER_IMAGE_NAME=${{ env.DOCKER_IMAGE_NAME }}, 
+          | DOCKER_CONTAINER=${{ env.DOCKER_CONTAINER }}, 
           | MODE=${{ matrix.mode }}
         
       - name: Set up Docker Buildx
@@ -70,7 +70,7 @@ jobs:
             build-args: |
               DEFAULT_MODE=${{ matrix.mode }}
             push: true
-            tags: ghcr.io/polycubebot/${DOCKER_IMAGE_NAME}-pcn-iptables:${DOCKER_IMAGE_TAG}
+            tags: ghcr.io/polycubebot/${{ env.DOCKER_IMAGE_NAME }}-pcn-iptables:${{ env.DOCKER_IMAGE_TAG }}
             cache-from: type=local,src=/tmp/.buildx-cache
             cache-to: type=local,dest=/tmp/.buildx-cache
       -
