@@ -20,6 +20,11 @@ jobs:
       matrix:
         # For docker default mode
         mode: ['default', 'pcn-k8s', 'pcn-iptables']
+    env:
+      DOCKER_IMAGE_TAG: ${{ github.event.head_commit.message }}
+      DOCKER_IMAGE_NAME: polycube
+      DOCKER_CONTAINER: polycubed
+      REPO_GIT_BRANCH: main
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository (default master)
@@ -29,11 +34,6 @@ jobs:
           fetch-depth: 0
 
       - name: Set-up environment
-        env:
-          DOCKER_IMAGE_TAG: $(git rev-parse --short "$GITHUB_SHA")
-          DOCKER_IMAGE_NAME: polycube
-          DOCKER_CONTAINER: polycubed
-          REPO_GIT_BRANCH: ${GITHUB_REF#refs/heads/}
         run: echo ENV 
           | REPO_GIT_BRANCH=${{ env.REPO_GIT_BRANCH }}, 
           | DOCKER_IMAGE_TAG=${{ env.DOCKER_IMAGE_TAG }}, 
