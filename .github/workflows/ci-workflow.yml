@@ -79,7 +79,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: [build]
-    if: ${{build.status == 'success'}}
+    if: ${{ jobs.build.status == 'success' }}
     steps:
       - name: Run Launch Clean Instance Tests
         run: echo Launch Clean Instance Tests
