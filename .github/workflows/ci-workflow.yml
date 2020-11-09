@@ -5,9 +5,9 @@ name: Build & Test Workflow
 on:
   push:
     branches: [main]
-  schedule:
+  #schedule:
     # Runs every 15 minutes past every hour on Mon, Tue, Wed, Thu and Fri
-    - cron: '*/15 * * * 1-5'
+    #- cron: '*/15 * * * 1-5'
 
 # This workflow is made by two jobs that run sequentially
 jobs:
