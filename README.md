@@ -21,7 +21,8 @@ Docker is an open source containerization platform. Docker enables developers to
 
 A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
-Images become containers when they run on Docker Engine. 
+Images become containers when they run on Docker Engine. For further information you can see [Docekr Overview](https://docs.docker.com/get-started/overview/)
+
 
 ### What is Jenkins?
 Jenkins is an open-source server that is written entirely in Java. It lets you execute a series of actions to achieve the continuous integration process, that too in an automated fashion.
