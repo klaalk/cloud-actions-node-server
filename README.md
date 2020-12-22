@@ -61,13 +61,4 @@ Actions are standalone commands that are combined into steps to create a job. Ac
 A runner is a server that has the GitHub Actions runner application installed. You can use a runner hosted by GitHub, or you can host your own. A runner listens for available jobs, runs one job at a time, and reports the progress, logs, and results back to GitHub. For GitHub-hosted runners, each job in a workflow runs in a fresh virtual environment.
 
 ## Play with Docker and Github Actions
-For starting to take the first steps, in this paragraph will show how we can set up a basic workflow with the minimal objective to build a docker image when a new commit is pushed on a "test" repository.
-
-As I said before, Github Actions offers CI workflow templates for a variety of languages and frameworks. For this specific case I will choose a Node.js Backend application with Express.
-
-### Create a new repository
-### Commit your application
-### Setup your first workflow
-
-## Polycube case of study
-The scope of the project is to migrating from Jenkins pipline to Github Actions.
+I recommend you to see [Configure GitHub Actions](https://docs.docker.com/ci-cd/github-actions/) that show how we can set up a basic workflow with optimization features and push on GitHub Container Registry a tagged version of a Docker container image.
