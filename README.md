@@ -1,4 +1,4 @@
-# Cloud Computing - Github Actions: Automating testing workflow for the Polycube open-source project
+# Cloud Computing - Github Actions
 This project aims at migrating the Polycube testing, which involves several VMs and Docker, into a "managed" service, the one provided by GitHub, hence freeing precious CPU (and human) resources at the POLITO premises.
 
 ## Prerequisites
